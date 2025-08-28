@@ -4,80 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>بۆ تۆ 🌕</title>
-
-  <!-- Font -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap');
-  </style>
-
-  <!-- AOS Animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700&display=swap');
     body {
       margin: 0;
       font-family: 'Lateef', serif;
-      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
+      background: linear-gradient(-45deg, #3a7bd5, #00d2ff, #3a7bd5, #00d2ff); /* Blue theme */
       background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-      color: white;
+      animation: gradientBG 15s ease infinite;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      padding: 20px;
+      align-items: center;
+      color: white;
       text-align: center;
+      padding: 20px;
     }
-
     @keyframes gradientBG {
       0% {background-position: 0% 50%;}
       50% {background-position: 100% 50%;}
       100% {background-position: 0% 50%;}
     }
-
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
     img {
-      max-width: 90%;
+      max-width: 80%;
       height: auto;
-      border-radius: 20px;
-      box-shadow: 0px 0px 25px rgba(0,0,0,0.4);
-      margin-bottom: 40px;
-      transition: transform 0.4s ease;
+      border-radius: 15px;
+      box-shadow: 0px 6px 20px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
     }
-
-    img:hover {
-      transform: scale(1.05);
-    }
-
     .back-btn {
       background: transparent;
-      border: 2px solid #007bff;
-      padding: 15px 25px;
-      border-radius: 12px;
-      color: #007bff;
-      font-size: 1.5rem;
+      border: 2px solid white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      color: white;
+      font-size: 1.3rem;
       text-decoration: none;
       transition: all 0.3s ease;
     }
-
     .back-btn:hover {
-      background: #007bff;
-      color: white;
-      transform: scale(1.05);
+      background: white;
+      color: #3a7bd5;
     }
   </style>
 </head>
 <body>
-  <img src="mywords.jpeg" alt="بۆ تۆ" data-aos="zoom-in" data-aos-duration="1500">
-
-  <a href="home.html" class="back-btn" data-aos="fade-up" data-aos-duration="2000">
-    بگەڕێینەوە🫣
-  </a>
-
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <h1>بۆ تۆ 🌕</h1>
+  <img src="mywords.jpeg" alt="My Words">
+  <a href="home.html" class="back-btn">بگەڕێینەوە🫣</a>
 </body>
 </html>
