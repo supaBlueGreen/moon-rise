@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>وام بینی 😍</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Lateef', serif;
+      background: linear-gradient(-45deg, #000000, #1a1a1a, #000000, #2c2c2c); /* Black theme */
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099;
+    }
+    video {
+      max-width: 85%;
+      border-radius: 12px;
+      box-shadow: 0px 8px 25px rgba(255,0,153,0.4);
+      margin-bottom: 30px;
+    }
+    .back-btn {
+      background: transparent;
+      border: 2px solid #ff0099;
+      padding: 12px 20px;
+      border-radius: 10px;
+      color: #ff0099;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .back-btn:hover {
+      background: #ff0099;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>وام بینی 😍</h1>
+  <video controls>
+    <source src="firstgreet.mp4" type="video/mp4">
+    error occured.
+  </video>
+  <a href="home.html" class="back-btn">بگەڕێینەوە🫣</a>
+</body>
+</html>
