@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>هەیڤ 🌕</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Lateef', serif;
+      background: linear-gradient(135deg, #4b0082, #8a2be2, #9932cc);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-shadow: 0 0 12px rgba(255,255,255,0.3);
+    }
+
+    .music-btn {
+      background: #fff;
+      color: #4b0082;
+      border: none;
+      font-size: 2rem;
+      padding: 20px 40px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
+    }
+
+    .music-btn:hover {
+      background: #e6e6e6;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,255,255,0.6);
+    }
+
+    .back-btn {
+      margin-top: 40px;
+      background: transparent;
+      border: 2px solid white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: white;
+      color: #4b0082;
+    }
+  </style>
+</head>
+<body>
+  <h1>هەیڤ 🌕</h1>
+  
+  <button class="music-btn" onclick="toggleMusic()">🎵</button>
+  
+  <audio id="audio" src="werwer.mp3"></audio>
+  
+  <a href="home.html" class="back-btn">بگەڕێینەوە🫣</a>
+  
+  <script>
+    const audio = document.getElementById('audio');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+      } else {
+        audio.play();
+        isPlaying = true;
+      }
+    }
+  </script>
+</body>
+</html>
