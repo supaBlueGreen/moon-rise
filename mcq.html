@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>هەر تۆ 💙</title>
+  <style>
+    body {
+      font-family: "Noto Naskh Arabic", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #3498db, #5dade2);
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin: 20px 0;
+      color: #fff;
+      font-size: 2.5rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .question {
+      background: #fff;
+      margin: 15px auto;
+      padding: 15px;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      text-align: right;
+      direction: rtl;
+    }
+
+    .options label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    button {
+      margin: 25px;
+      padding: 12px 25px;
+      background: #2e86de;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1b4f72;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 25px;
+      background: transparent;
+      color: #fff;
+      font-size: 1.3rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 2px solid #fff;
+      transition: all 0.3s ease;
+    }
+    .back-btn:hover {
+      background: #fff;
+      color: #3498db;
+    }
+
+    /* Popup */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #popupContent {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 20px;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    #popup button {
+      margin-top: 15px;
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #popup button:hover {
+      background: #1b4f72;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>هەر تۆ 💙</h1>
+
+  <form id="quizForm">
+    <!-- Q1 -->
+    <div class="question">
+      <p>١. ژمارە ٣٢٤ لە چییەوە هاتووە:</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="ا"> شەڕی چاڵدێران🤺</label>
+        <label><input type="radio" name="q1" value="ب"> ماڵی باوکی🤧</label>
+        <label><input type="radio" name="q1" value="ن"> یەکەم ساتە وەختی دەرکەوتنی مانگ🌕</label>
+        <label><input type="radio" name="q1" value="س"> لە سێ و دوو و چوار 🙂‍↔️</label>
+      </div>
+    </div>
+    <!-- Q2 -->
+    <div class="question">
+      <p>٢. ئێمە دوو ڕەنگمان هەیە، ئەگەر یەکێکیان مۆر بێت، ئەی ڕەنگەکەی تر چییە!</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="ا"> شین</label>
+        <label><input type="radio" name="q2" value="ب"> سەوز</label>
+        <label><input type="radio" name="q2" value="ن"> ڕەش</label>
+        <label><input type="radio" name="q2" value="س"> سپی</label>
+      </div>
+    </div>
+    <!-- Q3 -->
+    <div class="question">
+      <p>٣. وەڵامی ڕاست بدۆزەوە:</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="ا"> 🐰🦊</label>
+        <label><input type="radio" name="q3" value="ب"> 🦋🦁</label>
+        <label><input type="radio" name="q3" value="ن"> 🐼🐊</label>
+        <label><input type="radio" name="q3" value="س"> 🦋🙈</label>
+      </div>
+    </div>
+    <!-- Q4 -->
+    <div class="question">
+      <p>٤. کام لەمانە شێوگی کیمایی گلوکۆزە:</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="ا"> C6H12O6</label>
+        <label><input type="radio" name="q4" value="ب"> گۆگرداتی سیانە قورقوشم</label>
+        <label><input type="radio" name="q4" value="ن"> N3V2A4N</label>
+        <label><input type="radio" name="q4" value="س"> S1U4P9A</label>
+      </div>
+    </div>
+    <!-- Q5 -->
+    <div class="question">
+      <p>٥. کام لەمانە ناخۆشترین ئیشی ناو ماڵە:</p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="ا"> خواردن دروست کردن</label>
+        <label><input type="radio" name="q5" value="ب"> پاک کردنەوە</label>
+        <label><input type="radio" name="q5" value="ن"> ئوتو کردن</label>
+        <label><input type="radio" name="q5" value="س"> ماسیحە لێیان</label>
+      </div>
+    </div>
+    <!-- Q6 -->
+    <div class="question">
+      <p>٦. ڕەنگی سەوز دوای چی ڕەنگێک پەیدا بوو 👀</p>
+      <div class="options">
+        <label><input type="radio" name="q6" value="ا"> سپی</label>
+        <label><input type="radio" name="q6" value="ب"> سوور</label>
+        <label><input type="radio" name="q6" value="ن"> شین</label>
+        <label><input type="radio" name="q6" value="س"> قاوەیی</label>
+      </div>
+    </div>
+    <!-- Q7 -->
+    <div class="question">
+      <p>٧. کابرایەک لە کاتی خوێندنەوە ئەچێتە ناو چاڵێک، بۆ؟</p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="ا"> تا بچێتە قوڵایی بابەتەکە😂</label>
+        <label><input type="radio" name="q7" value="ب"> خوا سەری لێ تێکداوە 🤧</label>
+        <label><input type="radio" name="q7" value="ن"> چونکە لەسەر نڤان ئەخوێنێتەوە و حەز ناکات کەسیکە بیبینێت🫣</label>
+        <label><input type="radio" name="q7" value="س"> من نازانم🤧</label>
+      </div>
+    </div>
+    <!-- Q8 -->
+    <div class="question">
+      <p>٨. گریمان نڤان فلسێکی لە گیرفانا ماوە، چی پێ ئەکڕێت؟</p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="ا"> دەبەیەک ئاو 🤧</label>
+        <label><input type="radio" name="q8" value="ب"> جبس 😂</label>
+        <label><input type="radio" name="q8" value="ن"> مستیلە 🫣</label>
+        <label><input type="radio" name="q8" value="س"> قەترەی های فرێشی ئێکسپایەر دوور 🙂‍↔️</label>
+      </div>
+    </div>
+    <!-- Q9 -->
+    <div class="question">
+      <p>٩. ئەو ڕۆژەی نێرگزەکەت پێدام، ڕەنگی چاکەتەکەت چیبوو🫣</p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="ا"> شین</label>
+        <label><input type="radio" name="q9" value="ب"> مۆر</label>
+        <label><input type="radio" name="q9" value="ن"> قاوەیی</label>
+        <label><input type="radio" name="q9" value="س"> ڕەش</label>
+      </div>
+    </div>
+    <!-- Q10 -->
+    <div class="question">
+      <p>١٠. بۆنێک هەڵبژێرە:</p>
+      <div class="options">
+        <label><input type="radio" name="q10" value="ا"> شیرین</label>
+        <label><input type="radio" name="q10" value="ب"> تاڵ😂</label>
+        <label><input type="radio" name="q10" value="ن"> تیژ</label>
+        <label><input type="radio" name="q10" value="س"> مزر 😂</label>
+      </div>
+    </div>
+  </form>
+
+  <button onclick="calculateScore()">سەحیکە 🙂‍↔️</button>
+  <br>
+  <a href="home.html" class="back-btn">بگەڕێینەوە🫣</a>
+
+  <!-- Popup -->
+  <div id="popup">
+    <div id="popupContent">
+      <p id="resultText"></p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const results = {
+      0: "سفر 🙂",
+      1: "یەکت هێنا 😒",
+      2: "دوو! بەوەش ئەڵین نەتیجە! 🤧",
+      3: "سێ 🙃 قەینا لە فایناڵ پڕیکەرەوە 🤧",
+      4: "نڤان نەبەز محمد، چوار لە دە 👏🏻🙂",
+      5: "سەر پەتەکە  😂",
+      6: "شەش 🥹 شەش لە دە'ی تۆ ناگۆڕمەوە بە دەرەجەی هەزار ئەوایل🫣",
+      7: "حەوت ڕۆژ لە حەفتەیەکدا عاشقتم🫣",
+      8: "نانا زیرەکیت 🙂‍↔️ هەشت 😍",
+      9: "قیچەکت مابوو 😱 نۆ 🥹",
+      10:"ئەوەش خوێندکارەکەی من 🥺 دە لە دە 🥳 ماشاء الله 😍"
+    };
+
+    function calculateScore() {
+      const form = document.getElementById("quizForm");
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const q = form["q" + i].value;
+        if (!q) {
+          showPopup("پرسیارێکت وەڵام نەداوەتەوە چاوەکەم🤧");
+          return;
+        }
+        if (q === "ن") score++;
+      }
+      showPopup(results[score]);
+    }
+
+    function showPopup(msg) {
+      document.getElementById("resultText").innerText = msg;
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
