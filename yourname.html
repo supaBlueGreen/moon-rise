@@ -2,13 +2,14 @@
 <html lang="ku" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ناڤ شیرین 🍬</title>
   <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Lateef', serif;
-      margin: 0;
-      padding: 0;
       background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
       color: #fff;
       text-align: center;
@@ -25,28 +26,20 @@
       margin-bottom: 30px;
     }
 
-    .meanings {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .card {
+    .card-custom {
       padding: 25px;
       border-radius: 15px;
       font-size: 1.5rem;
       font-weight: bold;
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
+      color: #fff;
     }
-    .card:hover {
+    .card-custom:hover {
       transform: translateY(-8px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    /* Colors in requested order */
     .blue { background: #3498db; }
     .grey { background: #7f8c8d; }
     .black { background: #2c3e50; }
@@ -57,45 +50,6 @@
     .chocolate { background: #7b3f00; }
     .sun { background: #f39c12; }
 
-    /* Popup modal */
-    .modal {
-      display: none;   /* ✅ hidden by default */
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 0.4s ease;
-    }
-
-    .modal-content {
-      background: #fff;
-      color: #2c3e50;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 500px;
-      width: 80%;
-      font-size: 1.5rem;
-      line-height: 2rem;
-      text-align: center;
-      position: relative;
-      animation: scaleIn 0.3s ease;
-    }
-
-    .close {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #333;
-    }
-
-    /* Back button */
     .back-btn {
       display: inline-block;
       margin-top: 40px;
@@ -113,15 +67,12 @@
       color: #2c3e50;
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes scaleIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    .modal-content {
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-family: 'Lateef', serif;
+      color: #000; /* Pop-up messages text color black */
     }
   </style>
 </head>
@@ -130,56 +81,66 @@
   <h1>ناڤ شیرین 🍬</h1>
   <h2>نڤان💗</h2>
 
-  <div class="meanings">
-    <div class="card blue" onclick="openModal(0)">خەوتن</div>
-    <div class="card grey" onclick="openModal(1)">حەشارگە</div>
-    <div class="card black" onclick="openModal(2)">مانگ</div>
-    <div class="card pink" onclick="openModal(3)">میهرەبانی</div>
-    <div class="card green" onclick="openModal(4)">ژیان</div>
-    <div class="card purple" onclick="openModal(5)">دڵخۆشی</div>
-    <div class="card white" onclick="openModal(6)">جوانترین خەندە</div>
-    <div class="card chocolate" onclick="openModal(7)">شیرینترین</div>
-    <div class="card sun" onclick="openModal(8)">خۆر</div>
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-12"><div class="card card-custom blue" onclick="openModal(0)">خەوتن</div></div>
+      <div class="col-12"><div class="card card-custom grey" onclick="openModal(1)">حەشارگە</div></div>
+      <div class="col-12"><div class="card card-custom black" onclick="openModal(2)">مانگ</div></div>
+      <div class="col-12"><div class="card card-custom pink" onclick="openModal(3)">میهرەبانی</div></div>
+      <div class="col-12"><div class="card card-custom green" onclick="openModal(4)">ژیان</div></div>
+      <div class="col-12"><div class="card card-custom purple" onclick="openModal(5)">دڵخۆشی</div></div>
+      <div class="col-12"><div class="card card-custom white" onclick="openModal(6)">جوانترین خەندە</div></div>
+      <div class="col-12"><div class="card card-custom chocolate" onclick="openModal(7)">شیرینترین</div></div>
+      <div class="col-12"><div class="card card-custom sun" onclick="openModal(8)">خۆر</div></div>
+    </div>
   </div>
 
   <!-- Modal -->
-  <div id="popupModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <p id="modalText"></p>
+  <div class="modal fade" id="popupModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4">
+        <p id="modalText"></p>
+        <button type="button" class="btn btn-primary mt-3" id="modalCloseBtn" data-bs-dismiss="modal">هممم 🫣</button>
+      </div>
     </div>
   </div>
 
   <a href="home.html" class="back-btn">بگەڕێینەوە🫣</a>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     const messages = [
       "هیوایەتت خەویشە 🥹",
       "لە ناو دڵتدا حەشارم بدە 🫣",
       "تو ماه منی 🌕",
       "لەناو مرۆڤەکان، تەنها تۆ وات لێکردم ووشەی میهرەبانت بۆ بەکار بهێنم 🥺",
-      "-ژیان واتە چی!\n-نڤان 💙",
+      "-:ژیان واتە چی\n-:نڤان 💙",
       "د گەل تە پڕ دڵخوشم وەک پاشایێ سەر زەمینم🤭",
       "بخەند ببینم ددانت🫣🤍",
       "تۆ قەند، من مێروولە🫣",
-      "💙:ئەمڕۆش جەوەکە بە دڵی تۆیە خۆر دیار نییە.\n-: بەڵام من وتم خۆری ئاسمان دیار نەبێت نەک هەموو خۆر'ەکان 🥺"
+      "💙:ئەمڕۆش جەوەکە بە دڵی تۆیە خۆر دیار نییە.\n-:بەڵام من وتم خۆری ئاسمان دیار نەبێت نەک هەموو خۆر'ەکان 🥺"
+    ];
+
+    const closeTexts = [
+      "وایە🙂‍↔️",
+      "من کوێم ئێرە کێیە 🫣",
+      "🌚",
+      "🫣",
+      "بلو 💙",
+      "شازادەی بادینان👑",
+      "👀",
+      "🐜",
+      "☀️"
     ];
 
     function openModal(index) {
       document.getElementById("modalText").innerText = messages[index];
-      const modal = document.getElementById("popupModal");
-      modal.style.display = "flex"; // ✅ only flex when opened
-    }
-
-    function closeModal() {
-      document.getElementById("popupModal").style.display = "none";
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById("popupModal");
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
+      const closeBtn = document.getElementById("modalCloseBtn");
+      closeBtn.innerText = closeTexts[index];
+      const modalEl = document.getElementById('popupModal');
+      const modal = new bootstrap.Modal(modalEl);
+      modal.show();
     }
   </script>
 </body>
