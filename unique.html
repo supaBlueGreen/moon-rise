@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>هەمیشە لاتم 💚</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Lateef font -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap');
+  </style>
+
+  <!-- Bootstrap 5 for modern modal/animation -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --darkblue-1:#0d3b66;
+      --darkblue-2:#1e5f74;
+      --blue:#0d6efd;
+      --white:#ffffff;
+    }
+
+    body {
+      font-family: 'Lateef', cursive;
+      background: linear-gradient(135deg, var(--darkblue-1), var(--darkblue-2));
+      min-height: 100vh;
+      margin: 0;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px 60px;
+    }
+
+    h1{
+      font-size: 3rem;
+      margin: 0 0 6px;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+    h2{
+      font-size: 1.8rem;
+      margin: 0 0 28px;
+      opacity: .95;
+      color: #f0f0f0;
+    }
+
+    .answers{
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: min(420px, 92%);
+      align-items: stretch;
+    }
+
+    .answer-btn{
+      font-size: 1.5rem;
+      padding: 10px 22px;
+      border-radius: 14px;
+      border: 2px solid transparent;
+      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease;
+      backdrop-filter: blur(6px);
+    }
+    .answer-btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+
+    /* Button colors */
+    .btn-blue{
+      background: var(--blue);
+      color: var(--white);
+    }
+    .btn-trans{
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border-color: rgba(255,255,255,0.6);
+    }
+    .btn-trans:hover{
+      background: rgba(255,255,255,0.18);
+      border-color: #fff;
+    }
+
+    /* Back button */
+    .back-btn{
+      display: inline-block;
+      margin-top: 34px;
+      padding: 10px 22px;
+      font-size: 1.3rem;
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid #fff;
+      border-radius: 12px;
+      transition: .25s ease;
+      background: transparent;
+    }
+    .back-btn:hover{
+      background: #fff;
+      color: var(--darkblue-2);
+      text-decoration: none;
+    }
+
+    /* Modal typography */
+    .modal-content{
+      font-family: 'Lateef', cursive;
+      font-size: 1.5rem;
+      line-height: 1.9rem;
+      color: #000; /* popup text now black */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Heading = home box title -->
+  <h1>هەمیشە لاتم 💚</h1>
+  <!-- Subheading -->
+  <h2>قسەم بۆ بکە🦋</h2>
+
+  <div class="answers">
+    <button class="answer-btn btn-blue" onclick="showPopup(1)">باشم</button>
+    <button class="answer-btn btn-trans" onclick="showPopup(2)">تووڕەم</button>
+    <button class="answer-btn btn-trans" onclick="showPopup(3)">بێتاقەتم</button>
+  </div>
+
+  <!-- Back button -->
+  <a href="home.html" class="back-btn">بگەڕێینەوە🫣</a>
+
+  <!-- Bootstrap Modal -->
+  <div class="modal fade" id="popupModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-end">
+        <div class="modal-body" id="popupMessage"></div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-secondary" id="closeBtn" data-bs-dismiss="modal">باشە</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const contents = {
+      1: `عافەرین کچی ئاقڵ 🙂‍↔️ یاخوا هەر باش بیت ئەی مانگ 🥺🌕 کەواتە منیش زۆر باشم 😍 تۆ لەبری هەردووکمان بڕیار ئەدەیت کە چۆن بین💙`,
+      2: `من هەر کوردی نازانم 🤐 ئەوە کێ تووڕەی کردووی با بێم بۆ گیانی😡 دە لێیان مەگرە میهرەبان🥺 بەخوا ئەگەر کەسەکە ئازیزێکت بێت بە ویستی خۆی توڕەی نەکردووی شتەکە خۆ نەویستانە بووە ☹️ خۆ تووڕە بوون هەر ڕو ئەدات بەس دەی وەرە ئێستا با ئارام بینەوە 🫣 تەواو وەعد ئێستا ئارامیت! ئەزانم لەبەر دڵی من ئەڵێیت ئا 🫣 تەداااا چارەسەر بوو 🥹 ئینجا وەرە شتێکیشت پێ بڵێم😶 تۆ زۆر تایبەتیت🦋 ماشاءالله`,
+      3: `ئەوە چییە ئا بێ 😐 ئەی من چیم لێرە، من چۆن ئەهێڵم وابیت 🥺 دەی بۆستێ با هەنێک  شت بڵێم، ئەزانیت یەکێک لە ویستەکانم چییە! ئەها خۆ پێشم وتووتی🤧 خۆم فێر ئەکەم یاپراخی گەڵامێوت بۆ دروست ئەکەم 🙂‍↔️بەس دوای نەڵێیت ئەم شتە ناخۆشە چییە 🤢 ئەترسم یاپراخت لەبەرچاو بخەم تا فێر ئەبم 🤧دە هەروا فێر ئەبم چی بکەم 😐 ئینجاش، حەزێکی ترم هەیە زۆر سەیرە، پاک کردنی قۆخ 🙂‍↔️ ئەوە تۆ بڵێیت بۆ لە خۆمەوە حەز ئەکەم قۆخ پاک بکەم 🫣من شێتیشم کچێک وام پێ ئەڵێت 🤧 ئەی ئەزانیت من چی پێ ئەڵێم، منیش ئەڵێم ؛ خۆم شێتی ڕووی نڤان نەکەم، چ بکەم؟ ئێستا ئەڵێ بۆ چی بکەیت بڕۆ سەیدەلیە پاک بکەرەوە🤧 دە باشە تۆش😐 وی 🫣 کچەکە ئەوە ددانت ئەبینم 🥹🤍 دە ئاوا پێ بکەنە 🥺 پێکەنینەکانت بە هەموو دونیا نادەم 🤍`
+    };
+
+    const closeTexts = {
+      1: "تۆ نییە تۆ 🫣",
+      2: "ڕێکەوتین 🙂‍↔️",
+      3: "خەندیدام 🤍"
+    };
+
+    function showPopup(id){
+      document.getElementById('popupMessage').innerText = contents[id];
+      document.getElementById('closeBtn').innerText = closeTexts[id] || "باشە";
+      const modal = new bootstrap.Modal(document.getElementById('popupModal'));
+      modal.show();
+    }
+  </script>
+</body>
+</html>
