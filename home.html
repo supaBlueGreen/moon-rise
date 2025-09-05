@@ -17,9 +17,9 @@
     body {
       margin: 0;
       font-family: 'Lateef', serif;
-      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
       background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      animation: gradientBG 18s ease infinite;
       color: white;
       min-height: 100vh;
       display: flex;
@@ -34,10 +34,21 @@
       100% {background-position: 0% 50%;}
     }
 
-    h1 {
-      font-size: 3rem;
+    /* h2 styled with natural pink gradient glow */
+    h2 {
+      font-size: 2.2rem;
       margin-bottom: 30px;
       text-align: center;
+      line-height: 1.6;
+      background: linear-gradient(90deg, #ff758c, #ff7eb3, #ff9a9e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glowText 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px rgba(255, 118, 136, 0.5); }
+      to { text-shadow: 0 0 25px rgba(255, 105, 180, 0.9); }
     }
 
     .grid {
@@ -57,24 +68,29 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none;
       color: white;
+      animation: glowCard 4s ease-in-out infinite alternate;
     }
 
     .card:hover {
       transform: scale(1.07);
-      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
     }
 
-    /* Card colors */
-    .blue { background: #007bff; }
-    .green { background: #28a745; }
-    .white { background: #ffffff; color: #000; }
-    .black { background: #000000; }
-    .purple { background: #6f42c1; }
-    .red { background: #dc3545; }
-    .pink { background: #e83e8c; }
-    .grey { background: #6c757d; }
-    .brown { background: #8b4513; }
-    .darkred { background: #8b0000; }
+    @keyframes glowCard {
+      from { box-shadow: 0 0 12px rgba(255,255,255,0.3); }
+      to { box-shadow: 0 0 30px rgba(255,255,255,0.7); }
+    }
+
+    /* Gradient glowing card colors */
+    .blue { background: linear-gradient(135deg, #141e30, #243b55); }
+    .green { background: linear-gradient(135deg, #11998e, #38ef7d); }
+    .grey { background: linear-gradient(135deg, #bdc3c7, #2c3e50); }
+    .black { background: linear-gradient(135deg, #000000, #434343); }
+    .purple { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
+    .red { background: linear-gradient(135deg, #ff0844, #ff416c); }
+    .pink { background: linear-gradient(135deg, #ff758c, #ff7eb3); }
+    .white { background: linear-gradient(135deg, #ffffff, #ece9e6); color: #000; }
+    .brown { background: linear-gradient(135deg, #603813, #b29f94); }
+    .darkred { background: linear-gradient(135deg, #8b0000, #b31217); }
 
     /* Back button transparent */
     .card.back {
@@ -85,6 +101,7 @@
       margin-top: 30px;
       color: #17a2b8;
       transition: all 0.3s ease;
+      animation: none;
     }
 
     .card.back:hover {
@@ -95,17 +112,20 @@
   </style>
 </head>
 <body>
-  <h1 data-aos="fade-down" data-aos-duration="1500">خوش آمدی🥺</h1>
+  <h2 data-aos="fade-down" data-aos-duration="1500">
+    ئەی مانگ<br>
+    بەدبەختی من ئەوەیە کە تۆ نەبیت
+  </h2>
 
   <div class="grid" data-aos="fade-up" data-aos-duration="2000">
     <a href="mywords.html" class="card blue">بۆ تۆ 🌕</a>
     <a href="firstwords.html" class="card green">وام وت 🫣</a>
-    <a href="mydrawings.html" class="card white">ساتەکان 🥹</a>
+    <a href="mydrawings.html" class="card grey">ساتەکان 🥹</a>
     <a href="firstgreet.html" class="card black">وام بینی 😍</a>
     <a href="yourname.html" class="card purple">ناڤ شیرین 🍬</a>
     <a href="firstwords2.html" class="card red">سوپرایز 🥳</a>
     <a href="mcq.html" class="card pink">هەر تۆ 💙</a>
-    <a href="moonvideo.html" class="card grey">بخەند 🤍</a>
+    <a href="moonvideo.html" class="card white">بخەند 🤍</a>
     <a href="badini.html" class="card brown">هەیڤ 🌕</a>
     <a href="unique.html" class="card darkred">هەمیشە لاتم 💚</a>
 
